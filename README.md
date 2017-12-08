@@ -83,3 +83,42 @@ In the following example we are excluding React and Lodash:
   }
 }
 ```
+
+
+# Fork 筆記
+
+## 自己install 另外兩個module
+```sh
+npm install babel-preset-env --save-dev
+npm install --save babel-polyfill
+```
+不然做成lib 會有一些問題
+
+## How to use 
+```sh
+  $ git init
+  $ git remote add template https://github.com/s724959099/webpack_init.git
+  $ git pull template master
+  $ git remote remove template
+  $ npm install
+  
+```
+
+## Library
+如果需要把他輸出成library
+打開webpack.config.js
+```javascript=
+output: {
+    path: __dirname,
+    filename: 'dist/app.js',
+    library: 'meatball', // 模組名稱
+    libraryTarget: 'commonjs2' // 有多種可以選擇
+}
+
+```
+
+target 有多種可以選擇
+http://www.css88.com/doc/webpack/configuration/output/
+
+前端可以選擇window or commonjs2
+
